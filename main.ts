@@ -93,7 +93,13 @@ namespace startbit {
         port2
     }
 
-
+    export enum startbit_digitaltubePort {
+        //% block="Port 1"
+        port1 = 0x01,
+        //% block="Port 2"
+        port2 = 0x02
+    }
+	
     export enum startbit_CmdType {
         //% block="Invalid command"
         NO_COMMAND = 0,
