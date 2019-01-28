@@ -100,6 +100,13 @@ namespace startbit {
         port2 = 0x02
     }
 	
+    export enum startbit_servorange {
+        //% block="180"
+        range1 = 180,
+        //% block="270"
+        range2 =270
+    }
+	
     export enum startbit_CmdType {
         //% block="Invalid command"
         NO_COMMAND = 0,
@@ -369,13 +376,13 @@ namespace startbit {
     /**
     * Set the angle of servo 1 to 8, range of 0~180 degree
     */
-    //% weight=99 blockId=setServo block="Set pwm servo|index %index|angle(0~180) %angle|duration %duration"
+    //% weight=99 blockId=setServo block="Set pwm servo range|range %range|index %index|angle %angle|duration %duration"
     //% angle.min=0 angle.max=180
-    export function setServo(index: number, angle: number, duration: number) {
-        //if (angle > 180 || angle < 0) {
+    export function setServo(range:startbit_servorange, index: number, angle: number, duration: number) {
+        //if (range == startbit_servorange.range1) {
             //return;
         //}
-        let position = mapRGB(angle, 0, 270, 500, 2500);
+        let position = mapRGB(angle, 0, range, 500, 2500);
 
         let buf = pins.createBuffer(10);
         buf[0] = 0x55;
