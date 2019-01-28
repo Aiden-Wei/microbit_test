@@ -378,7 +378,7 @@ namespace startbit {
     */
     //% weight=99 blockId=setServo block="Set pwm servo range|range %range|index %index|angle %angle|duration %duration"
     //% angle.min=0 angle.max=180
-    export function setServo(range:startbit_servorange, index: number, angle: number, duration: number) {
+    export function setServo(range:startbit_servorange, index: number = 1, angle: number = 90, duration: number) {
         //if (range == startbit_servorange.range1) {
             //return;
         //}
