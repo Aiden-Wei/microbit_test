@@ -375,7 +375,7 @@ namespace startbit {
         //if (angle > 180 || angle < 0) {
             //return;
         //}
-        let position = mapRGB(angle, 0, 360, 500, 2500);
+        let position = mapRGB(angle, 0, 270, 500, 2500);
 
         let buf = pins.createBuffer(10);
         buf[0] = 0x55;
