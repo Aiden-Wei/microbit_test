@@ -372,10 +372,10 @@ namespace startbit {
     //% weight=99 blockId=setServo block="Set pwm servo|index %index|angle(0~180) %angle|duration %duration"
     //% angle.min=0 angle.max=180
     export function setServo(index: number, angle: number, duration: number) {
-        if (angle > 180 || angle < 0) {
-            return;
-        }
-        let position = mapRGB(angle, 0, 180, 500, 2500);
+        //if (angle > 180 || angle < 0) {
+            //return;
+        //}
+        let position = mapRGB(angle, 0, 360, 500, 2500);
 
         let buf = pins.createBuffer(10);
         buf[0] = 0x55;
